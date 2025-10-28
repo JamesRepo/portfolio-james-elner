@@ -3,13 +3,13 @@ const projects = [
     {
         id: 1,
         image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600',
-        alt: 'City street'
+        alt: 'City street',
     },
     {
         id: 2,
         image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600',
-        alt: 'Forest sunlight'
-    }
+        alt: 'Forest sunlight',
+    },
 ];
 ---
 
@@ -18,7 +18,8 @@ const projects = [
         <h2 class="section-heading">Recent Work</h2>
 
         <div class="work-grid">
-            {projects.map(project => (
+            {
+                projects.map((project) => (
                     <article class="work-item">
                         <a href="#">
                             <img src={project.image} alt={project.alt} />
@@ -27,7 +28,8 @@ const projects = [
                             </div>
                         </a>
                     </article>
-            ))}
+                ))
+            }
         </div>
     </div>
 </section>
@@ -80,7 +82,7 @@ const projects = [
         bottom: 0;
         left: 0;
         right: 0;
-        background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
         padding: 2rem;
         color: white;
         opacity: 0;

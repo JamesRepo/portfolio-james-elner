@@ -1,17 +1,42 @@
 {
-  "name": "portfolio-james-elner",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@lucide/astro": "^0.548.0",
-    "@tailwindcss/vite": "^4.1.16",
-    "astro": "^5.15.1",
-    "tailwindcss": "^4.1.16"
-  }
+    "name": "portfolio-james-elner",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro",
+        "lint": "eslint . --ext .js,.ts,.astro",
+        "lint:fix": "eslint . --ext .js,.ts,.astro --fix",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "prepare": "husky"
+    },
+    "dependencies": {
+        "@lucide/astro": "^0.548.0",
+        "@tailwindcss/vite": "^4.1.16",
+        "astro": "^5.15.1",
+        "tailwindcss": "^4.1.16"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.38.0",
+        "eslint": "^9.38.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-astro": "^1.4.0",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.2.6",
+        "prettier": "^3.6.2",
+        "prettier-plugin-astro": "^0.14.1",
+        "typescript-eslint": "^8.46.2"
+    },
+    "lint-staged": {
+        "*.{js,ts,astro}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.{json,css,md}": [
+            "prettier --write"
+        ]
+    }
 }
